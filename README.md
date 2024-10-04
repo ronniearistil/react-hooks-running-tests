@@ -1,0 +1,61 @@
+# Sip & Swirl Cocktail Menu
+![Screenshot of the Sip & Swirl Cocktail Menu](<Screenshot 2024-10-04 at 1.39.34 PM.png>)
+## Description
+The Sip & Swirl Cocktail Menu is an interactive web application where users can view, rate, comment, and manage various cocktail recipes. The application fetches cocktail data from an API and dynamically displays it on the page. Users can explore different cocktails, view ingredients and recipes, add new cocktails, edit details, and leave comments or rate their favorite drinks.
+
+## Features
+- Cocktail Display: Displays a grid of cocktail images. Clicking on an image shows details like ingredients and the recipe.
+- Add Cocktails: Users can create new cocktails by submitting a form with a name, ingredients, image, and recipe.
+- Edit Cocktails: Users can edit the ingredients and recipe of a selected cocktail.
+- Delete Cocktails: Users can delete a cocktail from the menu.
+- Interactions: Users can like a cocktail, rate it, and leave comments.
+- Toggle Ingredients/Recipe: Toggle buttons allow users to hide and show cocktail ingredients or recipes.
+- Comments: Users can add comments on cocktails and toggle the comments section to hide or show them.
+
+## Project Structure
+- HTML (index.html): The structure and layout of the webpage, including forms for adding and editing cocktails, and sections for displaying the cocktail details.
+- JavaScript (index.js): Contains logic for fetching data from the API, dynamically updating the DOM, and handling user interactions like adding new cocktails, commenting, and rating.
+- CSS (style.css): Defines the styles for the webpage, including layout, colors, and grid structure.
+
+## API
+The project uses a local API serving cocktail data at http://localhost:3000/cocktails. Each cocktail object in the API has the following structure:
+
+``` { "id": 1, "name": "Margarita", "image": "./images/margarita.jpg", "ingredients": [ { "amount": "2 oz", "name": "Tequila" }, { "amount": "1 oz", "name": "Lime Juice" }, { "amount": "1 oz", "name": "Cointreau" } ], "recipe": "Shake ingredients with ice and strain into a salt-rimmed glass." } ```
+
+## API Endpoints
+- GET /cocktails: Fetches the list of all cocktails. ``` fetch('http://localhost:3000/cocktails') .then(response => response.json()) .then(data => console.log(data)); ```
+
+- POST /cocktails: Adds a new cocktail based on the form data. ``` fetch('http://localhost:3000/cocktails', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(newCocktail) }) .then(response => response.json()) .then(data => console.log('Cocktail added:', data)); ```
+
+- PATCH /cocktails/
+: Edits a cocktail’s ingredients and recipe. ``` fetch(http://localhost:3000/cocktails/${cocktailId}, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ingredients: newIngredients, recipe: newRecipe }) }) .then(response => response.json()) .then(data => console.log('Cocktail updated:', data)); ```
+
+- DELETE /cocktails/
+: Deletes a cocktail from the API and removes it from the DOM. ``` fetch(http://localhost:3000/cocktails/${cocktailId}, { method: 'DELETE' }) .then(() => console.log('Cocktail deleted.')); ```
+
+## How to Use
+- View Cocktails: Upon loading the page, all available cocktails will be displayed. Click on any cocktail image to see its details.
+- Like and Rate: Use the "Like" button to like a cocktail. Rate it using the dropdown to assign a rating.
+- Add a Cocktail: Fill out the "Add New Cocktail" form, including a name, ingredients, image, and recipe. Click "Create Cocktail" to add it to the menu.
+- Edit a Cocktail: Use the "Edit Cocktail" form to update the selected cocktail's ingredients and recipe.
+- Delete a Cocktail: Click the "Delete Cocktail" button to remove a cocktail from the menu.
+- Leave a Comment: Use the comment form to submit a comment about a cocktail. You can toggle the comments section to show or hide comments.
+
+## Installation and Setup
+Clone the repository: ``` git clone https://github.com/your-username/sip-and-swirl.git cd sip-and-swirl ```
+
+Install the necessary dependencies and run the local JSON server: ``` npm install json-server --watch db.json ```
+
+Open index.html in your browser.
+
+## Technologies Used
+- HTML: Structuring the content of the application.
+- CSS: Styling the layout and design.
+- JavaScript: Handling dynamic content, user interactions, and API requests.
+- JSON Server: Used as a local backend to simulate an API.
+
+## Image Credits
+- Cosmopolitan Image: ShutterStock
+- Manhattan Image: Raw Pixel
+- Margarita Image: FreePik
+- Negroni Image: FreePik
