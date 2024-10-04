@@ -1,7 +1,7 @@
 # Sip & Swirl Cocktail Menu
 
 ## Description
-The Sip & Swirl Cocktail Menu is an interactive web application where users can view, rate, comment, and manage various cocktail recipes. The application fetches cocktail data from an API and dynamically displays it on the page. Users can explore different cocktails, view ingredients and recipes, add new cocktails, edit details, and leave comments or rate their favorite drinks.
+The Sip & Swirl Cocktail Menu is an interactive web application where users can view, rate, comment, and manage various cocktail recipes. The application fetches cocktail data from local json server and dynamically displays it on the page. Users can explore different cocktails, view ingredients and recipes, add new cocktails, edit details, and leave comments or rate their favorite drinks.
 
 ## Features
 - Cocktail Display: Displays a grid of cocktail images. Clicking on an image shows details like ingredients and the recipe.
